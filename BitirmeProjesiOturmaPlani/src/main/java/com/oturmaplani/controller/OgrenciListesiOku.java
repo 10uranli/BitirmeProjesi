@@ -30,7 +30,7 @@ public class OgrenciListesiOku extends HttpServlet {
 		if (FilenameUtils.getExtension(excel.getSubmittedFileName()).equals("xlsx")) {
 			excel.write(path);
 			if (ExcelToDBUtility.getExcelImportFile(path, Integer.parseInt(request.getParameter("satirSonu")),request.getParameter("sinif"))) {
-				request.setAttribute("stateEkleme", "Excelden verilen baþarýyla sisteme girildi");
+				request.setAttribute("stateEkleme", "Excelden verilen baþarýyla sisteme girildi.");
 				request.getRequestDispatcher("tabanpuan").forward(request, response);
 			} else {
 				request.setAttribute("stateEkleme", "Excel okunurken hata ile karþýlaþýldý.Lütfen dosya içeriðini kontrol ediniz.");
