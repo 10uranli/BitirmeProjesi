@@ -33,7 +33,7 @@ public class OgrenciListesiOku extends HttpServlet {
 				request.setAttribute("stateEkleme", "Excelden verilen baþarýyla sisteme girildi.");
 				request.getRequestDispatcher("tabanpuan").forward(request, response);
 			} else {
-				request.setAttribute("stateEkleme", "Excel okunurken hata ile karþýlaþýldý.Lütfen dosya içeriðini kontrol ediniz.");
+				request.setAttribute("stateEkleme", "Excel okunurken hata ile karþýlaþýldý.Lütfen dosya içeriðini kontrol ediniz!");
 				request.getRequestDispatcher("tabanpuan").forward(request, response);
 			}
 		} else {
