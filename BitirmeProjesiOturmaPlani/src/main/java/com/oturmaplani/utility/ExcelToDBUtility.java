@@ -23,8 +23,9 @@ public class ExcelToDBUtility {
 	private static Row row = null;
 	private static int[] siraNumaraListesi = null;
 
-	public static boolean getExcelImportFile(String path, int satirSonu, String sinifAdi) {
+	public static boolean getExcelImportFile(String path, int satirSonu, String[] sinifAdi, int[] sinifMevcut) {
 		ArrayList<Ogrenci> ogrenciListesi = new ArrayList<Ogrenci>();
+		int sira = 1;
 		try {
 			siraNumaraListesi = IntStream.rangeClosed(1, satirSonu -1).toArray();
 			siraNumaralariniKaristir(siraNumaraListesi);
@@ -32,15 +33,22 @@ public class ExcelToDBUtility {
 			fs = OPCPackage.open(input);
 			wb = WorkbookFactory.create(fs);
 			sheet = wb.getSheetAt(0);
-			for (int i = 1; i < satirSonu; i++) {
+			for (int i = 1, j = 1; i < satirSonu; i++,j++) {
 				Ogrenci ogrenci = new Ogrenci();
 				row = (Row) sheet.getRow(i);
 				ogrenci.setOgrenciAdi((row.getCell(1) == null) ? "0" : row.getCell(1).toString());
 				ogrenci.setOgrenciSoyad((row.getCell(2) == null) ? "0" : row.getCell(2).toString());
 				ogrenci.setOgrenciNo((row.getCell(0) == null) ? "0" : row.getCell(0).toString());
-				ogrenci.setSinifAdi(new Sinif(sinifAdi));
+				ogrenci.setSinifAdi(new Sinif(sinifAdi[sira-1]));
 				ogrenci.setSira(siraNumaraListesi[i-1]);
 				ogrenciListesi.add(ogrenci);
+				if(sinifMevcut[sira-1] == j){
+					DBtoExcelUtility.getExcelFile(ogrenciListesi, sinifAdi[sira-1]);
+					ogrenciListesi.clear();
+					sira++;
+					j=0;
+				}
+				
 			}
 			input.close();
 		} catch (Exception ex) {
@@ -52,7 +60,7 @@ public class ExcelToDBUtility {
 				exx.printStackTrace();
 			}
 		}
-		DBtoExcelUtility.getExcelFile(ogrenciListesi);
+		DBtoExcelUtility.getExcelFile(ogrenciListesi, sinifAdi[sira-1]);
 		return false;
 	}
 	

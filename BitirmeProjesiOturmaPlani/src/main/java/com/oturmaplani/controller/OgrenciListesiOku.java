@@ -29,7 +29,13 @@ public class OgrenciListesiOku extends HttpServlet {
 		Part excel = request.getPart("ogrenciListesi");
 		if (FilenameUtils.getExtension(excel.getSubmittedFileName()).equals("xlsx")) {
 			excel.write(path);
-			if (ExcelToDBUtility.getExcelImportFile(path, Integer.parseInt(request.getParameter("satirSonu")),request.getParameter("sinif"))) {
+			int mevcut1 = Integer.parseInt(request.getParameter("mevcut1"));
+			int mevcut2 = Integer.parseInt(request.getParameter("mevcut2"));
+			int mevcut3 = Integer.parseInt(request.getParameter("mevcut3"));
+			int mevcut4 = Integer.parseInt(request.getParameter("mevcut4"));
+			String sinif[] = {"MF104","MF105","MF106","MF107"};
+			int sinifMevcut[] = {mevcut1,mevcut2,mevcut3,mevcut4};
+			if (ExcelToDBUtility.getExcelImportFile(path, Integer.parseInt(request.getParameter("satirSonu")),sinif,sinifMevcut)) {
 				request.setAttribute("stateEkleme", "Excelden verilen baþarýyla sisteme girildi!");
 				request.getRequestDispatcher("tabanpuan").forward(request, response);
 			} else {

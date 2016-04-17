@@ -20,10 +20,10 @@ public final class DBtoExcelUtility {
 	  private static XSSFRow row = null;
 	  private static XSSFCell cell = null;
 
-	  public static boolean getExcelFile(ArrayList<Ogrenci> ogrenciListesi){
+	  public static boolean getExcelFile(ArrayList<Ogrenci> ogrenciListesi, String sinifAdi){
 	    wb = new XSSFWorkbook();//XSSF nesnesini tanýmla
 	    sp = wb.createSheet();//Sheet veriyi oluþtur.
-	    row = sp.createRow(1);//Sütünlarý oluþturmak için nesneyi yarat.
+	    row = sp.createRow(0);//Sütünlarý oluþturmak için nesneyi yarat.
 	    cell = row.createCell(0);//Sütünlarý oluþtur.
 	    cell.setCellValue("Öðrenci No");//Oluþturulan sütüna ismi ata.
 	    cell = row.createCell(1);//Sütünlarý oluþtur.
@@ -32,7 +32,7 @@ public final class DBtoExcelUtility {
 	    cell.setCellValue("Sýnýf Adý");//Oluþturulan sütüna ismi ata.
 	    cell = row.createCell(3);//Sütünlarý oluþtur.
 	    cell.setCellValue("Sýnav Sýra Numarasý");//Oluþturulan sütüna ismi ata.
-	    int i = 2;
+	    int i = 1;
 	    for (Ogrenci ogrenci: ogrenciListesi) {//ForEach döngüsünü kullan.
 	      row = sp.createRow(i);
 	      cell = row.createCell(0);//Oluþturulmuþ sütünlara okunan satýrlarý gir.
@@ -46,7 +46,7 @@ public final class DBtoExcelUtility {
 	      i++;
 	    }
 	    try {
-	      out = new FileOutputStream(new File("C:\\Users\\onur_\\Desktop\\SýnavListesi.xlsx"));//Oluþturulan Exceli yaz.
+	      out = new FileOutputStream(new File("C:\\Users\\onur_\\Desktop\\"+ sinifAdi.toUpperCase() +" SýnavListesi.xlsx"));//Oluþturulan Exceli yaz.
 	    } catch (FileNotFoundException e) {
 	      // Send Export Error Page "Dosya Bulunamadý " with e.getMessage().toString();
 	    }
