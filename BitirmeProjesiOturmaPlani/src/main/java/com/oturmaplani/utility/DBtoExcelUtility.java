@@ -20,7 +20,7 @@ public final class DBtoExcelUtility {
 	  private static XSSFRow row = null;
 	  private static XSSFCell cell = null;
 
-	  public static boolean getExcelFile(ArrayList<Ogrenci> ogrenciListesi, String sinifAdi){
+	  public static boolean getExcelFile(ArrayList<Ogrenci> ogrenciListesi){
 	    wb = new XSSFWorkbook();//XSSF nesnesini tanýmla
 	    sp = wb.createSheet();//Sheet veriyi oluþtur.
 	    row = sp.createRow(0);//Sütünlarý oluþturmak için nesneyi yarat.
@@ -46,7 +46,7 @@ public final class DBtoExcelUtility {
 	      i++;
 	    }
 	    try {
-	      out = new FileOutputStream(new File("C:\\Users\\onur_\\Desktop\\"+ sinifAdi.toUpperCase() +" SýnavListesi.xlsx"));//Oluþturulan Exceli yaz.
+	      out = new FileOutputStream(new File("C:\\Users\\onur_\\Desktop\\"+ ogrenciListesi.get(0).getSinifAdi().getSinifAdi() +" SýnavListesi.xlsx"));//Oluþturulan Exceli yaz.
 	    } catch (FileNotFoundException e) {
 	      // Send Export Error Page "Dosya Bulunamadý " with e.getMessage().toString();
 	    }

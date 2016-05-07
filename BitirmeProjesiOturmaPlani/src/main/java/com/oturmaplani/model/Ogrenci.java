@@ -70,4 +70,10 @@ public class Ogrenci implements java.io.Serializable {
 	public void setSinifAdi(Sinif _sinif) {
 		this._sinif = _sinif;
 	}
+
+	@Override
+	public String toString() {
+		return "Ogrenci [ogrenciID=" + ogrenciID + ", sira=" + sira + ", ogrenciNo=" + ogrenciNo + ", ogrenciAdi="
+				+ ogrenciAdi + ", ogrenciSoyad=" + ogrenciSoyad + ", _sinif=" + _sinif + "]";
+	}
 }
