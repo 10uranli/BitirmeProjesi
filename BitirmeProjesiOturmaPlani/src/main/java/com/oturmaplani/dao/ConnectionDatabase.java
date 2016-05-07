@@ -5,20 +5,16 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+
 
 public class ConnectionDatabase {
 	public static Connection getConnection() {
 		Connection connectStatus = null;
-
-		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			connectStatus = DriverManager.getConnection("jdbc:mysql://localhost/bitirmeprojesi?useUnicode=true&characterEncoding=UTF-8","root", "123456");
-			
-		
+			connectStatus = DriverManager.getConnection("jdbc:mysql://localhost:3307/bitirmeprojesi?useUnicode=true&characterEncoding=UTF-8","root", "123456");
 		} catch (SQLException | ClassNotFoundException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 		return connectStatus;
 	}
