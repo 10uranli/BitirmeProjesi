@@ -1,0 +1,30 @@
+body{
+	background: url(../images/bg-body.jpg) repeat left top;
+}
+
+
+
+.btn_div{
+     position: absolute;
+     left:38%;
+     top:40%;
+}
+h2{
+	 position: absolute;
+     left:35%;
+     top:15%;
+}
+.footer{
+	position: absolute;
+	top: 50%;
+	
+	width: 100%;
+
+}
+.btn_div #img{
+	
+	padding-left: 20%;
+	margin-bottom: 20%;
+}
+
+
