@@ -44,8 +44,8 @@
 					<div id="tab-1" class="tab">
 						<article>
 							<div class="text-section">
-								<h1>Dashboard</h1>
-								<p>This is a quick overview of some features</p>
+								<h1>KULLANICI EKLE</h1>
+								
 							</div>
 							<ul class="states">
 								<form action="ekle" method="post">
@@ -63,8 +63,13 @@
  <td><input type="text" name="mail" /></td>
  </tr>
  <tr>
- <td>Tel :</td>
- <td><input type="text" name="tel" /></td>
+ <td>Rol:</td>
+ <td>
+  <input type="radio" name="tel" value="Admin"> Admin<br>
+  <input type="radio" name="tel" value="Ogretim_User" checked>Öğretim Görevlisi <br>
+  <input type="radio" name="tel" value="Sorumlu_User" checked>Sorumlu Gözetmen <br>
+ 
+  </td>
  </tr>
  <tr>
  <td>&nbsp;</td>

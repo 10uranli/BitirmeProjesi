@@ -40,7 +40,7 @@
  <td><input type="text" name="mail" value="${user.mail}" /></td>
  </tr>
  <tr>
- <td>Tel :</td>
+ <td>rol:</td>
  <td><input type="text" name="tel" value="${user.tel}" /></td>
  </tr>
  <tr>

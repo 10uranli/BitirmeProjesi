@@ -62,8 +62,8 @@
 					<div id="tab-1" class="tab">
 						<article>
 							<div class="text-section">
-								<h1>Dashboard</h1>
-								<p>This is a quick overview of some features</p>
+								<h1>Düzenle Sil</h1>
+					
 							</div>
 							<table>
  <tr>
@@ -71,7 +71,7 @@
  <th>adi</th>
  <th>soyadi</th>
  <th>mail</th>
- <th>tel</th>
+ <th>rol</th>
  <th>İşlemler</th>
  </tr>
  <c:forEach items="${rehber}" var="kisi">

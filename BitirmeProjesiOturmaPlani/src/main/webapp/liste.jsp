@@ -27,7 +27,7 @@
 			}
 		}
 		</script>
-	<title>Your Company Name</title>
+	<title>ÇSOS</title>
 
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 </head>
