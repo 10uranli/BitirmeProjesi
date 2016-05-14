@@ -9,6 +9,7 @@
 	<title>Giris</title>
 	<link rel="stylesheet" type="text/css" href="css/Google_Giris.css" >
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
 <title>Excel Yolla</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
 <div class = "btn_div">
      <div id="img"><img src="images/omu_logom.png" alt="LOGO"></a></div>
 
-	<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">Selammm</div>
+	<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 	<p></p>
 	<p >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspHenüz Giriş Yapmadınız...</p>
 
@@ -44,8 +45,16 @@
         console.log("ID Token: " + id_token);
       };
     </script>
+    <script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
     
-  
+<a href="#" onclick="signOut();">Sign out</a>
 
 <div class="footer">
 

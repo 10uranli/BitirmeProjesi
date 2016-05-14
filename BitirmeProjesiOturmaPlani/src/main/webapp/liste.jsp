@@ -80,7 +80,7 @@
 				Sınıf Mevcudu: <input type="text" name="mevcut5"><br />
 				Sıra Sonu<input type="text" name="satirSonu"><b ><span  style="color: red;"><b class="text-danger">Exceldeki dolu olan son satırı giriniz!</b></span></b><br />
 				<input type="file" name="ogrenciListesi"><br /> 
-				<input type="submit"  class="btn btn-warning" 	 value="GÖNDER"><br />
+				gonder<input type="submit"   value="GÖNDER"><br />
 			</form>
 
 

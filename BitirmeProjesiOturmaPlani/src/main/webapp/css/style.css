@@ -11,6 +11,7 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	min-width: 960px;
 	margin: 0;
+	color:white;
 }
 img {
 	border: 0;
@@ -127,7 +128,7 @@ font-size: initial;
 	text-decoration: none;
 }
 #navigation li a:hover, #navigation li.selected a {
-	color: #44b2f1;
+	
 }
 /*------------------------------ CONTENTS ------------------------------*/
 #contents {
